@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "LSP without setup",
+    "description": "Diagnostics, symbols, hover, formatting and rename from a built-in language-server catalog. Works as installed: no config row, no server table."
+  }
+}

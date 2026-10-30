@@ -1,0 +1,67 @@
+{
+  "name": "@satanfire/dsh-lsp",
+  "version": "1.0.0",
+  "description": "LSP tools for DeepSeek Harness that work as installed: a built-in language-server catalog probed against PATH, and six flat-parameter tools.",
+  "type": "module",
+  "license": "MIT",
+  "author": "satanfire",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satanfire/dsh-lsp.git"
+  },
+  "homepage": "https://github.com/satanfire/dsh-lsp#readme",
+  "bugs": {
+    "url": "https://github.com/satanfire/dsh-lsp/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "lsp",
+    "language-server",
+    "diagnostics",
+    "rename",
+    "hover"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./locale/en.json": "./locale/en.json",
+    "./locale/zh.json": "./locale/zh.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "cordis.patch.yml",
+    "locale",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "check": "node --check index.js && for f in lib/*.js; do node --check \"$f\" || exit 1; done"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "*",
+    "@deepseek-ai/schemastery": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

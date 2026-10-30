@@ -1,0 +1,7 @@
+# Bundle patch: plain insert rows only.
+#
+# The row id is `lsp-auto`, not `lsp`: this plugin can live beside another LSP
+# bundle, and a shared id would make one row silently override the other.
+- insert:
+    - id: lsp-auto
+      name: '@satanfire/dsh-lsp'
